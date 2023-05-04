@@ -13,7 +13,7 @@ export const PORT = process.env.PORT
 const DB_PATH = process.env.DB_PATH
 
 mongoose
-	.connect(DB_PATH)
+	.connect(process.env.DB_PATH)
 	.then(() => console.log(chalk.yellow('BD works unlike me')))
 	.then(() => console.log(chalk.yellow('OGC')))
 	.catch(err => console.log(chalk.red('BD error', err)))
