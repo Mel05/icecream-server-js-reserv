@@ -10,10 +10,10 @@ import { getRootRouter } from './routes/rootRouter.js'
 dotenv.config()
 
 export const PORT = process.env.PORT
-const DB_PATH = process.env.DB_PATH
+const DB_PATH = process.env.MONGODB_URI
 
 mongoose
-	.connect(process.env.DB_PATH)
+	.connect(process.env.MONGODB_URI)
 	.then(() => console.log(chalk.yellow('BD works unlike me')))
 	.then(() => console.log(chalk.yellow('OGC')))
 	.catch(err => console.log(chalk.red('BD error', err)))
