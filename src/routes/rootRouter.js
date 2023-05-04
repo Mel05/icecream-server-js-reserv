@@ -1,5 +1,5 @@
 import express from 'express'
-import { getIcecreamById, getIcecreams } from '../controllers/rootController'
+import { getIcecreamById, getIcecreams } from '../controllers/rootController.js'
 
 export const getRootRouter = () => {
 	const router = express.Router()

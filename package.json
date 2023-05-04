@@ -4,14 +4,12 @@
 	"main": "index.js",
 	"author": "Mel",
 	"license": "MIT",
+	"type": "module",
 	"scripts": {
-		"watch": "tsc -w",
-		"server": "nodemon ./dist/index.js",
-		"dev": "concurrently \"npm watch\" \"npm run server\"",
-		"start": "node ./dist/index.js"
+		"server": "nodemon ./src/index.js",
+		"start": "node ./src/index.js"
 	},
 	"dependencies": {
-		"@types/multer": "^1.4.7",
 		"chalk": "4",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
@@ -20,12 +18,6 @@
 		"multer": "^1.4.5-lts.1"
 	},
 	"devDependencies": {
-		"@types/cors": "^2.8.13",
-		"@types/express": "^4.17.17",
-		"@types/node": "^18.15.11",
-		"concurrently": "^8.0.1",
-		"nodemon": "^2.0.22",
-		"ts-node": "^10.9.1",
-		"typescript": "^5.0.4"
+		"nodemon": "^2.0.22"
 	}
 }

@@ -1,16 +1,8 @@
 import chalk from 'chalk'
 
-import { Request, Response } from 'express'
+import IcecreamModel from '../models/Icecream.js'
 
-import { RequestWithParams } from '../types/typesReqRes'
-
-import IcecreamModel from '../models/Icecream'
-
-interface CategoryItemType {
-	category: number | undefined
-}
-
-export const getIcecreams = async (req: Request, res: Response) => {
+export const getIcecreams = async (req, res) => {
 	try {
 		const {
 			page = 1,
@@ -21,9 +13,9 @@ export const getIcecreams = async (req: Request, res: Response) => {
 			search = '',
 		} = req.query
 
-		let categoryItem: CategoryItemType | unknown = category
-		let searchItem: any = search
-		let sortByItem: any = { rating: order }
+		let categoryItem = category
+		let searchItem = search
+		let sortByItem = { rating: order }
 
 		if (category === undefined) {
 			categoryItem = { $in: [0, 1, 2, 3, 4, 5] }
@@ -70,10 +62,7 @@ export const getIcecreams = async (req: Request, res: Response) => {
 	}
 }
 
-export const getIcecreamById = async (
-	req: RequestWithParams<{ id: string }>,
-	res: Response
-) => {
+export const getIcecreamById = async (req, res) => {
 	try {
 		const icecreamData = await IcecreamModel.findById(req.params.id)
 

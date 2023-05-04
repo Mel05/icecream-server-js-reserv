@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
-import { app } from './app'
-import { PORT } from './app'
+import { app } from './app.js'
+import { PORT } from './app.js'
 
 app.listen(PORT, () => {
 	console.log(chalk.yellow(''))

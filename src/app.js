@@ -5,12 +5,12 @@ import dotenv from 'dotenv'
 import chalk from 'chalk'
 import multer from 'multer'
 
-import { getRootRouter } from './routes/rootRouter'
+import { getRootRouter } from './routes/rootRouter.js'
 
 dotenv.config()
 
 export const PORT = process.env.PORT
-const DB_PATH = process.env.DB_PATH as string
+const DB_PATH = process.env.DB_PATH
 
 mongoose
 	.connect('mongodb://' + DB_PATH)
